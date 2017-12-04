@@ -2,26 +2,22 @@
 
 A container for [kdenlive](https://kdenlive.org/), a free and open-source video editor for GNU/Linux.
 
+Based on https://github.com/lvm/docker-kdenlive
+
 # how to 
 
 ## install
 
-```bash
-$ docker pull lvm23/kdenlive
 ```
-
-or 
-
-```bash
-$ git clone https://github.com/lvm/docker-kdenlive && \
-  cd docker-kdenlive && \
-  docker build -t kdenlive .
+git clone https://github.com/lucaszanella/docker-kdenlive && \
+cd docker-kdenlive && \
+docker build -t kdenlive .
 ```
 
 ## run
 
-```bash
-$ docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/Videos:/videos -e DISPLAY=unix$DISPLAY --name knl kdenlive
+```
+docker run --rm -it -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/Videos:/videos -e DISPLAY=unix$DISPLAY --name knl kdenlive
 ```
   
 

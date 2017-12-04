@@ -1,9 +1,7 @@
-FROM debian:jessie
-MAINTAINER Mauro <mauro@sdf.org>
+FROM ubuntu:latest
+MAINTAINER Lucas Zanella (me@lucaszanella.com)
 
-COPY ["etc/apt/sources.list.d/backports.list", "/etc/apt/sources.list.d/backports.list"]
-
-RUN apt-get update \
+RUN apt-get update && apt-get install -y software-properties-common && add-apt-repository ppa:kdenlive/kdenlive-stable && apt-get update \
     && apt-get install -yq kdenlive wget unzip \
 	libavformat-ffmpeg56 libavdevice-ffmpeg56 \
 	libavcodec-ffmpeg-extra56 \
