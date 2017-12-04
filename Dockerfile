@@ -7,9 +7,9 @@ RUN apt-get update && apt-get install -y software-properties-common && add-apt-r
 	libavcodec-ffmpeg-extra56 \
 	libavcodec-extra libpostproc-ffmpeg53 \
 	libswscale-ffmpeg3 libmp3lame0 \
-        libxvidcore4 libx264-142 \
+        libxvidcore4 \
     --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p /videos
-
+#removed libx264-142, what is it for???
 ENTRYPOINT ["kdenlive"]

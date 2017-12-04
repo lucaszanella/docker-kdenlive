@@ -22,4 +22,8 @@ docker run --rm -it -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/Videos:/videos -e 
   
 
 `-v $HOME/videos:/videos` is used to mount the container's `/videos` directory to the host `$HOME/kdenlive` directory, you can choose other directory.    
-Note: probably you *might* also need to execute `xhost local:root` or `xhost +my-computer-hostname.local`.
+Note: probably you *might* also need to execute `xhost local:root` or `xhost +my-computer-hostname.local`:
+
+```
+xhost local:root && sudo docker run --rm -it -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/Videos:/videos -e DISPLAY=unix$DISPLAY kdenlive
+```
